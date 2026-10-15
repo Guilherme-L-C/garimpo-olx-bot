@@ -1,9 +1,15 @@
 # 🔍 Garimpo OLX Bot
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-orange.svg)](https://ai.google.dev/)
-[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot%20API-2CA5E0.svg)](https://core.telegram.org/bots)
-[![Database](https://img.shields.io/badge/Database-SQLite-lightgrey.svg)](https://www.sqlite.org/)
+<p align="center">
+  <img src="assets/banner.jpeg" alt="Garimpo OLX Bot" width="480">
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python"></a>
+  <a href="https://ai.google.dev/"><img src="https://img.shields.io/badge/AI-Google%20Gemini-orange.svg" alt="Google Gemini"></a>
+  <a href="https://core.telegram.org/bots"><img src="https://img.shields.io/badge/Telegram-Bot%20API-2CA5E0.svg" alt="Telegram Bot"></a>
+  <a href="https://www.sqlite.org/"><img src="https://img.shields.io/badge/Database-SQLite-lightgrey.svg" alt="SQLite"></a>
+</p>
 
 Autonomous deal hunter and market intelligence bot for OLX. Scrapes target queries in real-time, calculates statistical market pricing, correlates hardware specs with factual PassMark benchmarks, scores deals with Google Gemini AI, and dispatches rich Telegram alerts.
 
@@ -56,6 +62,8 @@ The bot operates continuously with zero human intervention:
 
 ```text
 garimpo/
+├── assets/
+│   └── banner.jpeg      # Project illustration banner
 ├── monitor.py           # Main monitoring daemon, scrapers, and Telegram dispatcher
 ├── market_analytics.py  # Statistical pricing, median calculation, and liquidity ratings
 ├── benchmarks.py        # Hardware database with PassMark scores and specs
@@ -126,10 +134,10 @@ To keep the monitor running continuously in the background on a Linux server:
 
    [Service]
    Type=simple
-   User=guilherme
-   WorkingDirectory=/home/guilherme/garimpo
+   User=username
+   WorkingDirectory=/path/to/garimpo-olx-bot
    Environment=PYTHONUNBUFFERED=1
-   ExecStart=/home/guilherme/garimpo/venv/bin/python -u /home/guilherme/garimpo/monitor.py
+   ExecStart=/path/to/garimpo-olx-bot/venv/bin/python -u /path/to/garimpo-olx-bot/monitor.py
    Restart=always
    RestartSec=15
 

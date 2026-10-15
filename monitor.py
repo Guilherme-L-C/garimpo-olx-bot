@@ -560,7 +560,7 @@ def processar_comandos_telegram():
                         continue
                     
                     # Remove menção do bot em grupos (ex: /start@garimpo123321_guilherme_bot -> /start)
-                    texto = re.sub(r"@garimpo123321_guilherme_bot\b", "", texto, flags=re.IGNORECASE).strip()
+                    texto = re.sub(r"@[a-zA-Z0-9_]+bot\b", "", texto, flags=re.IGNORECASE).strip()
                     print(f"Mensagem recebida de {chat_id}: '{texto}'")
                     
                     # Comando /start ou /help
