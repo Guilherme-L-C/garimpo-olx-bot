@@ -161,10 +161,15 @@ To keep the monitor running continuously in the background on a Linux server:
 
 ## Telegram Bot Commands
 
+The bot supports direct slash commands as well as natural language parsing via Google Gemini.
+
 | Command | Description |
 | :--- | :--- |
-| `/start` | Displays welcome message and current monitoring status |
-| `/buscas` | Lists all active queries being monitored |
-| `/adicionar <termo> <preco_max>` | Registers a new search query with a max price ceiling |
-| `/remover <id>` | Removes a search from the active monitoring pool |
-| `/status` | Shows database metrics, total ads processed, and uptime |
+| `/start` or `/help` | Displays welcome message and quick-start instructions |
+| `/top` or `/tiers` | Shows overall leaderboard of top-scored deals (Tier 8 to 10) |
+| `/tierlist` | Summarizes top deals specifically for your active monitored searches |
+| `/list` | Lists all your active search alerts and their respective IDs |
+| `/add <query> [max_price]` | Adds a new search alert (e.g. `/add RTX 3060 1200`) |
+| `/del <id>` | Deletes an active search alert by its ID (e.g. `/del 3`) |
+
+> **Natural Language Support:** You can also chat naturally with the bot (e.g., *"Quero monitorar PS Vita até 450 reais"*), and Gemini will extract the search query and price ceiling automatically.
