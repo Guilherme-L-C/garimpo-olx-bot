@@ -1,0 +1,23 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# SQLite Databases & Dynamic State
+*.db
+*.sqlite
+*.sqlite3
+ofertas.db
+
+# Python Virtual Environments & Caches
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*.class
+*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db
