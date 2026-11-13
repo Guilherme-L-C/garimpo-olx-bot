@@ -13,6 +13,12 @@
 
 Autonomous deal hunter and market intelligence bot for OLX. Scrapes target queries in real-time, calculates statistical market pricing, correlates hardware specs with factual PassMark benchmarks, scores deals with Google Gemini AI, and dispatches rich Telegram alerts.
 
+<p align="center">
+  <img src="assets/telegram-alert.png" alt="Telegram alert for a DDR5 2x16GB RAM kit at R$ 2,100: AI score 10/10 (Tier S), OLX median R$ 3,429.50, verdict and benchmark notes" width="360">
+  <br>
+  <em>A real alert: price 39% below the OLX median, scored Tier S by Gemini.</em>
+</p>
+
 ---
 
 ## Architecture Overview
@@ -63,7 +69,8 @@ The bot operates continuously with zero human intervention:
 ```text
 garimpo/
 ├── assets/
-│   └── banner.jpeg      # Project illustration banner
+│   ├── banner.jpeg      # Project illustration banner
+│   └── telegram-alert.png # Example alert screenshot
 ├── monitor.py           # Main monitoring daemon, scrapers, and Telegram dispatcher
 ├── market_analytics.py  # Statistical pricing, median calculation, and liquidity ratings
 ├── benchmarks.py        # Hardware database with PassMark scores and specs

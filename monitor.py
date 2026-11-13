@@ -344,7 +344,8 @@ def extrair_detalhes_ad(url):
                 data = json.loads(s.string)
                 if data.get("@type") == "Product" or "offers" in data:
                     name = data.get("name", "")
-                    description = data.get("description", "")
+                    # A OLX manda a descrição com HTML (<br>, &amp;); a IA e o Telegram recebem texto limpo
+                    description = BeautifulSoup(data.get("description", ""), "html.parser").get_text(" ", strip=True)
                     offers = data.get("offers", {})
                     price = float(offers.get("price", 0))
                     
