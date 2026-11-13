@@ -27,7 +27,7 @@ flowchart LR
         Parser --> Storage[("SQLite DB (ofertas.db)")]
         Parser --> Analytics["Market Analytics (Median & Liquidity)"]
         Parser --> Benchmark["Ground Truth Benchmarks (PassMark)"]
-        Analytics & Benchmark --> Gemini["Gemini 2.0 AI Valuation Engine"]
+        Analytics & Benchmark --> Gemini["Gemini Flash AI Valuation Engine"]
     end
 
     subgraph Notification["Notification"]
@@ -68,6 +68,7 @@ garimpo/
 ├── market_analytics.py  # Statistical pricing, median calculation, and liquidity ratings
 ├── benchmarks.py        # Hardware database with PassMark scores and specs
 ├── requirements.txt     # Python dependencies
+├── LICENSE              # MIT license
 ├── .env.example         # Template for environment variables
 └── ofertas.db           # SQLite database (auto-generated at runtime)
 ```
@@ -173,3 +174,13 @@ The bot supports direct slash commands as well as natural language parsing via G
 | `/del <id>` | Deletes an active search alert by its ID (e.g. `/del 3`) |
 
 > **Natural Language Support:** You can also chat naturally with the bot (e.g., *"Quero monitorar PS Vita até 450 reais"*), and Gemini will extract the search query and price ceiling automatically.
+
+---
+
+## Disclaimer
+
+This project is for personal and educational use. Automated access may go against the OLX terms of service: keep the polling interval reasonable, do not redistribute scraped data, and use it at your own risk.
+
+## License
+
+[MIT](LICENSE) © Guilherme Leite Cavalcanti
